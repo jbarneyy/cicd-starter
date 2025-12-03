@@ -15,7 +15,7 @@ func TestAPI(t *testing.T) {
 		t.Fatalf("Error creating request: %v", err)
 	}
 
-	req.Header.Add("Authorization", " testingforkeycheck")
+	req.Header.Add("Authorization", "ApiKey testingforkeycheck")
 
 	got, _ := GetAPIKey(req.Header)
 	want := "testingforkeycheck"
