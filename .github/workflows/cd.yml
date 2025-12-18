@@ -35,6 +35,9 @@ jobs:
       - name: 'submit build to gcloud repo'
         run : gcloud builds submit --tag us-central1-docker.pkg.dev/calm-energy-481619-d7/notely-ar-repo/notely:latest .
 
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/calm-energy-481619-d7/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project calm-energy-481619-d7 --max-instances=4
+
   # gcloud:
   #   name: Deploy
   #   runs-on: ubuntu-latest
