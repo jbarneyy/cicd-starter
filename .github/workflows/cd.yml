@@ -24,7 +24,7 @@ jobs:
   gcloud:
     name: Deploy
     runs-on: ubuntu-latest
-    
+
     steps:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
@@ -38,4 +38,4 @@ jobs:
       run: 'gcloud info'
 
     - name: 'submit build to gcloud repo'
-      run: gcloud builds submit --project=calm-energy-481619-d7 --tag us-central1-docker.pkg.dev/calm-energy-481619-d7/notely-ar-repo/notely:latest .
+      run : gcloud builds submit --tag us-central1-docker.pkg.dev/calm-energy-481619-d7/notely-ar-repo/notely:latest .
